@@ -58,8 +58,6 @@ const getRandomQuote = array => {
 };
 
 
-
-
 /***
   printQuote function:
    - calls the `getRandomQuote` function and assigns it to a variable.
@@ -91,6 +89,14 @@ const printQuote = () => {
   document.getElementById('quote-box').innerHTML = html;
 
 };
+
+
+/***
+  Calls the printQuote function every 5 seconds, making
+  quotes rotate without user input.
+***/
+
+window.setInterval(printQuote, 5000);
 
 
 /***
