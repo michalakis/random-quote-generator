@@ -4,6 +4,7 @@ body {
   background-color: #36b55c;
   color: white;
   font-family: 'Playfair Display', serif;
+  transition: 2.5s;
 }
 
 #quote-box {
@@ -80,7 +81,7 @@ body {
   color: #fff;
   background-color: #36b55c;
   padding: 15px 0;
-  transition: .5s ;
+  transition: 2.5s ;
 }
 #loadQuote:hover {
   background-color: rgba(255,255,255,.25);

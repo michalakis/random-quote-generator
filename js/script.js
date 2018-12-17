@@ -43,6 +43,18 @@ const quotes = [
 
 
 /***
+  A function which generates a random rgb function when called,
+  the value is less than 255 so as to avoid a white background.
+***/
+
+const randomRgbValue = () => {
+
+  return Math.floor( Math.random() * 175 );
+
+};
+
+
+/***
   getRandomQuote function:
    - generates a random number
    - uses the random number to `return` a random quote object from the
@@ -86,7 +98,14 @@ const printQuote = () => {
 
   html += `</p>`;
 
-  document.getElementById('quote-box').innerHTML = html;
+  document.querySelector('#quote-box').innerHTML = html;
+
+  // Change the background color
+  const rgbValue = randomRgbValue();
+  const rgbValues = `rgb( ${randomRgbValue()}, ${randomRgbValue()}, ${randomRgbValue()} )`;
+
+  document.querySelector('body').style.backgroundColor = rgbValues;
+  document.querySelector('#loadQuote').style.backgroundColor = rgbValues;
 
 };
 
