@@ -17,7 +17,7 @@ body {
 }
 
 .quote {
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: 400;
   line-height: 1.1;
   position: relative;
@@ -25,7 +25,7 @@ body {
 }
 
 .quote:before, .quote:after {
-  font-size: 6rem;
+  font-size: 3rem;
   line-height: 2.5rem;
   position: absolute;
 }
@@ -96,19 +96,13 @@ body {
   outline: none;
 }
 
-@media (max-width: 1000px) {
-  .quote {
-    font-size: 2.5rem;
-  }
-  .quote:before, .quote:after {
-    font-size: 3rem;
-  }
+@media (max-width: 700px) {
   .source {
     font-size: 1rem;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .quote {
     font-size: 1.5rem;
   }
