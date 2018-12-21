@@ -35,10 +35,9 @@ let quotes = [
     category: "Computer Science"
   },
   {
-    quote: "while ( noSuccess ) { tryAgain(); if (dead) { break; } }",
-    source: "Anonymous",
-    citation: "The Internet",
-    category: "Computer Science"
+    quote: "Beware of monotony; it’s the mother of all the deadly sins",
+    source: "Edith Wharton",
+    category: "Philosophy"
   },
   {
      quote: "The imitator dooms himself to hopeless mediocrity.",
@@ -48,11 +47,23 @@ let quotes = [
      category: "Philosophy"
   },
   {
+    quote: "The way we talk to our children becomes their inner voice.",
+    source: "Peggy O’Mara",
+    category: "Communication"
+  },
+  {
     quote: "All you need in this life is ignorance and confidence, and then Success is sure.",
     source: "Mark Twain",
     citation: "Letter to Cordelia Welsh Foote",
     year: 1887,
     category: "Philosophy"
+  },
+  {
+    quote: "Done is better than perfect.",
+    source: "Sheryl Sandberg",
+    citation: "Lean In: Women, Work, and the Will to Lead",
+    year: 2013,
+    category: "Inspiration"
   }
 ];
 
@@ -78,21 +89,22 @@ const randomRgbValue = () => {
 
 const getRandomQuote = array => {
 
+  // make sure that array is not empty
   if ( array.length > 0 ) {
 
     let quote = [];
 
     let randomNumber = Math.floor( Math.random() * array.length );
-    console.log(randomNumber);
+
+    // remove item from array and store it in usedQuotes
     quote = array.splice(randomNumber, 1);
     usedQuotes.push(quote[0]);
-
-    //console.log(array.length);
 
     return quote[0];
 
   } else {
 
+    // if array is empty, put all quotes back in and call function again
     quotes = usedQuotes;
     usedQuotes = [];
 
@@ -116,6 +128,7 @@ const getRandomQuote = array => {
 
 const printQuote = () => {
 
+  // Clear interval and reset it, for when load quote button is clicked
   printQuoteClearInterval();
   printQuoteSetInterval();
 
