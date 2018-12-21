@@ -17,7 +17,7 @@ let usedQuotes = [];
   such information is applicable.
 ***/
 
-const quotes = [
+let quotes = [
   {
     quote: "If the code and the comments do not match, possibly both are incorrect.",
     source: "Norm Schryer",
@@ -63,7 +63,7 @@ const quotes = [
 
 const randomRgbValue = () => {
 
-  return Math.floor( Math.random() * 225 );
+  return Math.floor( Math.random() * 200 );
 
 };
 
@@ -81,29 +81,21 @@ const getRandomQuote = array => {
 
     let quote = [];
 
-    const randomNumber = Math.floor( Math.random() * array.length );
-
+    let randomNumber = Math.floor( Math.random() * array.length );
+    console.log(randomNumber);
     quote = array.splice(randomNumber, 1);
     usedQuotes.push(quote[0]);
 
-    console.log(quote[0]);
+    //console.log(array.length);
 
     return quote[0];
 
   } else {
 
-    array = usedQuotes;
-    
-    let quote = [];
+    quotes = usedQuotes;
+    usedQuotes = [];
 
-    const randomNumber = Math.floor( Math.random() * array.length );
-
-    quote = array.splice(randomNumber, 1);
-    usedQuotes.push(quote[0]);
-
-    console.log(quote[0]);
-
-    return quote[0];
+    return getRandomQuote(quotes);
 
   }
 
@@ -158,7 +150,7 @@ const printQuote = () => {
   quotes rotate without user input.
 ***/
 
-window.setInterval(printQuote, 5000);
+window.setInterval(printQuote, 1000);
 
 
 /***
