@@ -55,7 +55,7 @@ const quotes = [
 
 const randomRgbValue = () => {
 
-  return Math.floor( Math.random() * 175 );
+  return Math.floor( Math.random() * 225 );
 
 };
 
