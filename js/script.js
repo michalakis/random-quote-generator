@@ -35,7 +35,7 @@ let quotes = [
     category: "Computer Science"
   },
   {
-    quote: "Beware of monotony; it’s the mother of all the deadly sins",
+    quote: "Beware of monotony; it’s the mother of all the deadly sins.",
     source: "Edith Wharton",
     category: "Philosophy"
   },
