@@ -2,6 +2,14 @@
  A Random Quote Generator
 ******************************************/
 
+
+/******************************************
+ Global variables are declared here.
+******************************************/
+
+let usedQuotes = [];
+
+
 /***
   An array of objects containing quotes, as well as further
   details about those quotes, such as the source, the year,
@@ -69,9 +77,36 @@ const randomRgbValue = () => {
 
 const getRandomQuote = array => {
 
-  const randomNumber = Math.floor( Math.random() * array.length );
+  if ( array.length > 0 ) {
 
-  return array[randomNumber];
+    let quote = [];
+
+    const randomNumber = Math.floor( Math.random() * array.length );
+
+    quote = array.splice(randomNumber, 1);
+    usedQuotes.push(quote[0]);
+
+    console.log(quote[0]);
+
+    return quote[0];
+
+  } else {
+
+    array = usedQuotes;
+    
+    let quote = [];
+
+    const randomNumber = Math.floor( Math.random() * array.length );
+
+    quote = array.splice(randomNumber, 1);
+    usedQuotes.push(quote[0]);
+
+    console.log(quote[0]);
+
+    return quote[0];
+
+  }
+
 
 };
 

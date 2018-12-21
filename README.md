@@ -1,1 +1,1 @@
-# random-quote-generator
+# A random quote generator made with vanilla javascript.
