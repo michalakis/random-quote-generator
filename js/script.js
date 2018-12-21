@@ -12,32 +12,38 @@
 const quotes = [
   {
     quote: "If the code and the comments do not match, possibly both are incorrect.",
-    source: "Norm Schryer"
+    source: "Norm Schryer",
+    category: "Computer Science"
   },
   {
     quote: "It was a joke, okay? If we thought it would actually be used, we wouldn’t have written it!",
-    source: "Mark Andreesen, speaking of the html tag blink"
+    source: "Mark Andreesen, speaking of the html tag blink",
+    category: "Computer Science"
   },
   {
     quote: "Perl: The only language that looks the same before and after RSA encryption.",
-    source: "Keith Bostic"
+    source: "Keith Bostic",
+    category: "Computer Science"
   },
   {
     quote: "while ( noSuccess ) { tryAgain(); if (dead) { break; } }",
     source: "Anonymous",
-    citation: "The Internet"
+    citation: "The Internet",
+    category: "Computer Science"
   },
   {
      quote: "The imitator dooms himself to hopeless mediocrity.",
      source: "Ralph Waldo Emerson",
      citation: "The Divinity College Address",
-     year: 1838
+     year: 1838,
+     category: "Philosophy"
   },
   {
     quote: "All you need in this life is ignorance and confidence, and then Success is sure.",
     source: "Mark Twain",
     citation: "Letter to Cordelia Welsh Foote",
-    year: 1887
+    year: 1887,
+    category: "Philosophy"
   }
 ];
 
@@ -93,8 +99,10 @@ const printQuote = () => {
   }
 
   if ( quote.year ) {
-    html += `<span class="year">${quote.year}</span>  `;
+    html += `<span class="year">${quote.year}</span>`;
   }
+
+  html += `<span class="category">${quote.category}</span>`
 
   html += `</p>`;
 
