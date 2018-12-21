@@ -3,11 +3,12 @@
 ******************************************/
 
 
-/******************************************
+/***
  Global variables are declared here.
-******************************************/
+***/
 
 let usedQuotes = [];
+let intervalId;
 
 
 /***
@@ -115,6 +116,9 @@ const getRandomQuote = array => {
 
 const printQuote = () => {
 
+  printQuoteClearInterval();
+  printQuoteSetInterval();
+
   let quote = getRandomQuote(quotes);
 
   let html = `
@@ -142,15 +146,38 @@ const printQuote = () => {
   document.querySelector('body').style.backgroundColor = rgbValues;
   document.querySelector('#loadQuote').style.backgroundColor = rgbValues;
 
+
 };
 
 
 /***
-  Calls the printQuote function every 5 seconds, making
-  quotes rotate without user input.
+  A function calling the printQuote function once every
+  5 seconds.
 ***/
 
-window.setInterval(printQuote, 1000);
+let printQuoteSetInterval = () => {
+
+  intervalId = window.setInterval(printQuote, 5000);
+
+};
+
+/***
+  A function ending the interval set above.
+***/
+
+let printQuoteClearInterval = () => {
+
+  clearInterval(intervalId);
+
+};
+
+
+/***
+ When the page loads, set the interval for the
+ printQuote function to be excecuted automatically.
+***/
+
+window.onload = printQuoteSetInterval;
 
 
 /***
